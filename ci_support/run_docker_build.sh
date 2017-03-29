@@ -14,6 +14,7 @@ config=$(cat <<CONDARC
 
 channels:
  - conda-forge
+ - r
  - defaults
 
 conda-build:
