@@ -5,5 +5,7 @@ appveyor:
   secure:
     BINSTAR_TOKEN: Rb//syQhmC53YylTgEkPLNDCZqF65mRSPN2lAvEvSap9MtP3Pth2D/UVZlepmalL
 channels:
+  sources:
+    - r
   targets:
     - [nomr, main]
