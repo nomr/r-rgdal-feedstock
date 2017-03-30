@@ -6,6 +6,9 @@ appveyor:
     BINSTAR_TOKEN: Rb//syQhmC53YylTgEkPLNDCZqF65mRSPN2lAvEvSap9MtP3Pth2D/UVZlepmalL
 channels:
   sources:
+    - nomr
+    - conda-forge
     - r
+    - defaults
   targets:
     - [nomr, main]
