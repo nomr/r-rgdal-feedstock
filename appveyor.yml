@@ -15,10 +15,12 @@ environment:
 
   matrix:
     - TARGET_ARCH: x86
+      CONDA_R: 3.3.2
       CONDA_PY: 27
       CONDA_INSTALL_LOCN: C:\\Miniconda
 
     - TARGET_ARCH: x64
+      CONDA_R: 3.3.2
       CONDA_PY: 27
       CONDA_INSTALL_LOCN: C:\\Miniconda-x64
 
@@ -47,7 +49,10 @@ install:
     # Add our channels.
     - cmd: conda config --set show_channel_urls true
     - cmd: conda config --remove channels defaults
+    - cmd: conda config --add channels defaults
     - cmd: conda config --add channels r
+    - cmd: conda config --add channels conda-forge
+    - cmd: conda config --add channels nomr
 
     # Configure the VM.
     - cmd: conda install -n root --quiet --yes obvious-ci
