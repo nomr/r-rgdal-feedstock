@@ -7,6 +7,9 @@ os: osx
 osx_image: xcode6.4
 
 env:
+  matrix:
+    
+    - CONDA_R=3.3.2
   global:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
     - secure: "PUgdPOkWNjjwd57Trqp7NUa7oL8SOKeZqZq318KiBu6Y6h0LhP/WLRi93y1Ej4lLGFr16NIOi5FFal535MGQHNfMVgmoGMQGOkqGef7RlCffEyuWSNYoiXxBJ3Mfsos8mD47IhcCig2nu2s+FnfyAeiB3Pqat1xjfaM1Wtk6OemZgxCWeafINITqffqtvBtucq97+8CMsOtNkfPPz4PoBVT9oK+2IdVHQXl5U6XZ5zyRnvs8Ijg1mN+IszN+E9GQEHxklvWj3HIuoJkBFcd52sAtvDgv5LDmn21lWMLV/lYJp0yczKWZQCgqLw8V9zffnYz5k6Edbxif2VtViuZr7fwpFy7cawZq8WU3D+5ft13TyTKa4ltR9yvtXjYAJpQUKqUGi1UEwJgLKTOwUiZme4IfAiGcAKX8MCOI3F3w5nYQkxrx1ifCJ0RUxC2IIu9P078wsZlC7DeEHXu3EyYN/VD6HB6FGo0oMKIbLmwyPh6xZL/ajK1zott/4meKZbPBFlSVGcDH8c/ngUtOprXYB6JCs6UTIdWDGwi6OEKCjw0BKGZqTSZL7UkkYW1FP3OohdZymFJWbZFyep27Do+OB9uFCsW9OeiB9TdSVvOD0KlOUAx3QHsmFvzTJRSI+HhMuxmLaNnxR0VCZWAuFZdF9xF7glo/JmStpblniaPAfio="
@@ -44,9 +47,7 @@ install:
       echo "Configuring conda."
       source /Users/travis/miniconda3/bin/activate root
       conda config --remove channels defaults
-      conda config --add channels defaults
       conda config --add channels r
-      conda config --add channels conda-forge
       conda config --set show_channel_urls true
       conda install --yes --quiet conda-forge-build-setup
       source run_conda_forge_build_setup
